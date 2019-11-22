@@ -8,7 +8,7 @@
      3. when visitor check out of the event with details(Event name, host mail, visitor mail), visitor will recieve an SMS and Email                regarding his visit and database is updated.
           
 ## Validations          
-  1. Host with unique email can register multiple events.
+  1. Host with unique email can register multiple unique events.
   2. Visitor can check in and check out in particular event only once.
   3. All the required details must be filled in the form.
   

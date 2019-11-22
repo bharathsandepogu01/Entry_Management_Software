@@ -1,7 +1,7 @@
 # Entry_Management_Software
 
 ## Installations and How to Run
-   1. Clone the web application from 
+   1. Clone the web application from https://github.com/BHARATHS0101/Entry_Management_Software.git
    2. In backend directory run **npm install** to install all dependencies and run **node server.js** to run the server.
    3. In entry_management directory run **npm install** to install all depedencies and run **npm start** to run the react(frontend).
    4. Install mongoDB.

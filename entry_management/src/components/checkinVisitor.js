@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class checkinVisitor extends Component{
     constructor(){
         super();
-        this.state= {visitorName: '' ,visitorEmail: '', visitorPhone: '', hostEmail:'', errorFlag: false, msg: "", success: false};
+        this.state= {visitorName: '' ,visitorEmail: '', visitorPhone: '', hostEmail:'',hostName:'', errorFlag: false, msg: "", success: false};
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -18,6 +18,7 @@ class checkinVisitor extends Component{
     handleSubmit(event){
 
         const newVisitor = {
+            hostName: this.state.hostName,
             hostEmail: this.state.hostEmail,
             visitorName: this.state.visitorName,
             visitorPhone: this.state.visitorPhone,
@@ -81,6 +82,11 @@ class checkinVisitor extends Component{
 
                         <p class="text-center text-dark mx-4 my-4"><h4>CKECK IN VISITOR</h4></p>
                         
+                        <div class="form-group text-left">
+                            <label for="Hname">Host Name</label>
+                            <input type="text" class="form-control" id="Hname" placeholder="Enter host name" name="hostName" value={this.state.hostName} onChange={this.handleChange}/>
+                        </div>
+
                         <div class="form-group text-left">
                             <label for="Hemail">Host Email</label>
                             <input type="email" class="form-control" id="Hemail" placeholder="Enter host email" name="hostEmail" value={this.state.hostEmail} onChange={this.handleChange}/>

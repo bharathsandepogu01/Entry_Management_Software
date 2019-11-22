@@ -27,6 +27,7 @@ export const add = newHost => {
 
 export const checkin = newVisitor => {
     return axios.post('host/checkinVisitor', {
+            hostName: newVisitor.hostName,
             hostEmail: newVisitor.hostEmail,
             visitorName: newVisitor.visitorName,
             visitorPhone: newVisitor.visitorPhone,
@@ -52,6 +53,7 @@ export const checkin = newVisitor => {
 
 export const checkout = exitVisitor => {
     return axios.post('host/checkoutVisitor', {
+            hostName: exitVisitor.hostName,
             hostEmail: exitVisitor.hostEmail,
             visitorEmail: exitVisitor.visitorEmail
         })

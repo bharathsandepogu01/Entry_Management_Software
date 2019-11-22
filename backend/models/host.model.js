@@ -61,7 +61,7 @@ const schema = new Schema({
 
         checkinTime: {type:Date, default: Date.now},
 
-        checkoutTime: {type:Date} 
+        checkoutTime: {type:Date, default: null} 
 
     }]
     

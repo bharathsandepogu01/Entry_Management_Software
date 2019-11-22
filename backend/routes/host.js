@@ -22,6 +22,7 @@ function addHost(req, res){
     };
 
     Host.findOne({
+        hostName: req.body.hostName,
         hostEmail: req.body.hostEmail
     })
     .then(host => {
@@ -68,12 +69,13 @@ function checkinVisitor(req, res){
       }
 
     Host.findOneAndUpdate({
+        hostName: req.body.hostName,
         hostEmail: req.body.hostEmail,
         "visitors.visitorEmail" : {$ne : req.body.visitorEmail}
     }, visitorData)
     .then(host => {
         if(!host){
-            res.json({error: ["No host found or user already checked in"]});
+            res.json({error: ["No host found or user already checked In"]});
         }
         else{
             const details = {
@@ -81,7 +83,7 @@ function checkinVisitor(req, res){
                 body: "Name : "+ req.body.visitorName+"<br>Phone : "+req.body.visitorPhone+"<br>Email : "+req.body.visitorEmail+"."
             } 
 
-            sendEmail(details, host.hostEmail);
+            // sendEmail(details, host.hostEmail);
             
             const SMS= {
                 body: 'New Visitor Arrived, \r\n'
@@ -91,7 +93,7 @@ function checkinVisitor(req, res){
                 toNumber: host.hostPhone
             };
 
-            sendSMS(SMS);
+            // sendSMS(SMS);
 
             res.send("visitor checked In");
         }
@@ -117,10 +119,12 @@ function checkoutVisitor(req, res){
           "visitors.$.checkoutTime" : checkoutDate,
         }
       };
-
+   
     Host.findOneAndUpdate({
+        hostName: req.body.hostName,
         hostEmail: req.body.hostEmail,  
-        "visitors.visitorEmail" : req.body.visitorEmail
+        "visitors.visitorEmail" : req.body.visitorEmail,
+        "visitors.checkoutTime": {$eq : null} 
     }, newValues,  {new: true})
       .then(visitor=>{
             if(visitor){
@@ -139,7 +143,7 @@ function checkoutVisitor(req, res){
                             +"<br>Address : "+visitor.hostAddress
                         } 
             
-                        sendEmail(details, req.body.visitorEmail);
+                        // sendEmail(details, req.body.visitorEmail);
                         
                         const SMS= {
                             body: "Here is your visit details"
@@ -152,14 +156,14 @@ function checkoutVisitor(req, res){
                             toNumber: visitor.visitors[arr[i]].visitorPhone
                         };
                         
-                        sendSMS(SMS);            
+                        // sendSMS(SMS);            
                    }
 
                 }
                 res.send("Visitor Checked Out");
             }
             else{
-                res.json({error: ["invalid details!!!"]});
+                res.json({error: ["invalid details or Visitor checked Out already"]});
             }
       })
       .catch(err => {

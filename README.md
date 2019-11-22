@@ -7,7 +7,7 @@
    4. Install mongoDB.
 
 ## Workflow
-  1. This is the web application developed using **MERN(Mongodb,Express,React,Node)** stack and third party services **(SMS: NEXMO, Email:SMTP)** for Entry Management System.
+  1. This is the web application developed using **MERN(Mongodb,Express,React,Node)** stack and third party services **(SMS: NEXMO, Email:SMTP(nodemailer))** for Entry Management System.
   2. In this application : 
      1. host can register the multiple events to be conducted with the details(event name, host email, phone, address).
      2. visitors can check into the specified event with visitor details and event's name and host email. Once, he check into the                  event both SMS and email sent to host with visitors details and database is updated.

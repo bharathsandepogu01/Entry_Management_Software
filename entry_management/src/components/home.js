@@ -12,7 +12,7 @@ class home extends Component{
                     <div class="col-lg-5 mx-4 my-4 ">
                         <div class="row  mx-4 my-4">
                             <div class="col-lg-12  mx-4 my-4">
-                                <Link to="/addHost" class="btn btn-primary btn-lg btn-block">Add Host</Link>
+                                <Link to="/addHost" class="btn btn-primary btn-lg btn-block">Add Event</Link>
                             </div>
                         </div>
                         <div class="row mx-4 my-4">

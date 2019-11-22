@@ -78,10 +78,10 @@ class addHost extends Component{
                             </div>
                         </Modal>
 
-                        <p class="text-center text-dark mx-4 my-4"><h4>ADD HOST</h4></p>
+                        <p class="text-center text-dark mx-4 my-4"><h4>ADD EVENT</h4></p>
 
                         <div class="form-group text-left">
-                            <label for="Hname">Host Name</label>
+                            <label for="Hname">Event Name</label>
                             <input type="text" class="form-control" id="Hname" placeholder="Enter name" name="hostName" value={this.state.hostName} onChange={this.handleChange}/>
                         </div>
                         

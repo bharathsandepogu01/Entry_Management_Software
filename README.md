@@ -1,5 +1,11 @@
 # Entry_Management_Software
 
+## Installations and How to Run
+   1. Clone the web application from 
+   2. In backend directory run **npm install** to install all dependencies and run **node server.js** to run the server.
+   3. In entry_management directory run **npm install** to install all depedencies and run **npm start** to run the react(frontend).
+   4. Install mongoDB.
+
 ## Workflow
   1. This is the web application developed using **MERN(Mongodb,Express,React,Node)** stack and third party services **(SMS: NEXMO, Email:SMTP)** for Entry Management System.
   2. In this application : 

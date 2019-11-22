@@ -83,7 +83,7 @@ function checkinVisitor(req, res){
                 body: "Name : "+ req.body.visitorName+"<br>Phone : "+req.body.visitorPhone+"<br>Email : "+req.body.visitorEmail+"."
             } 
 
-            // sendEmail(details, host.hostEmail);
+            sendEmail(details, host.hostEmail);
             
             const SMS= {
                 body: 'New Visitor Arrived, \r\n'
@@ -93,7 +93,7 @@ function checkinVisitor(req, res){
                 toNumber: host.hostPhone
             };
 
-            // sendSMS(SMS);
+            sendSMS(SMS);
 
             res.send("visitor checked In");
         }
@@ -143,7 +143,7 @@ function checkoutVisitor(req, res){
                             +"<br>Address : "+visitor.hostAddress
                         } 
             
-                        // sendEmail(details, req.body.visitorEmail);
+                        sendEmail(details, req.body.visitorEmail);
                         
                         const SMS= {
                             body: "Here is your visit details"
@@ -156,7 +156,7 @@ function checkoutVisitor(req, res){
                             toNumber: visitor.visitors[arr[i]].visitorPhone
                         };
                         
-                        // sendSMS(SMS);            
+                        sendSMS(SMS);            
                    }
 
                 }

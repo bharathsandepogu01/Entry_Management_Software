@@ -13,4 +13,4 @@
   3. All the required details must be filled in the form.
   
 ## Note
-  As this application using third party service for sending SMS,we need to configure apikey, apisecret in web application to use there       service and add user phone number as a test number in nexmo dashboard inorder to send SMS to user. 
+  As this application using third party service for sending SMS, we need to configure apikey, apisecret(from nexmo account) in web           application to use there service and add user phone number as a test number in nexmo account dashboard inorder to send SMS to user. 
